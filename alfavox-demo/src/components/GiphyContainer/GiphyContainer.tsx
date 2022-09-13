@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import GiphyContainerProps from "./GiphyContainerProps";
 
-const GiphyContainer = () => {
-  return (
-    <div>GiphyContainer</div>
-  )
-}
+const GiphyContainer = ({}: GiphyContainerProps) => {
+  return <div>GiphyContainer</div>;
+};
 
-export default GiphyContainer
+export default GiphyContainer;

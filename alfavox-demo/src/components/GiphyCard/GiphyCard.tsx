@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import GiphyCardProps from "./GiphyCardProps";
 
-const GiphyCard = () => {
-  return (
-    <div>GiphyCard</div>
-  )
-}
+const GiphyCard = ({}: GiphyCardProps) => {
+  return <div>GiphyCard</div>;
+};
 
-export default GiphyCard
+export default GiphyCard;
