@@ -9,7 +9,6 @@ const ContentPagination = ({itemCount, onChangePage}: ContentPaginationProps) =>
   const count = useMemo(() => Math.floor(itemCount / config.limit), [itemCount]);
 
   return <Pagination count={count} page={page} onChange={(e, value) => {
-    console.log(value);
     setPage(value);
     onChangePage(e,value);
   }}/>;

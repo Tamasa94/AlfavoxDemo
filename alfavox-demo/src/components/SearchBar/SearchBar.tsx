@@ -3,15 +3,16 @@ import React, { useEffect, useState } from "react";
 import SearchBarProps from "./SearchBarProps";
 import * as Style from "./style";
 import SearchIcon from "@mui/icons-material/Search";
-import { AccountCircle } from "@mui/icons-material";
 
-const SearchBar = ({initSearchText = "", eventHandlers: {OnSubmit}}: SearchBarProps) => {
+const SearchBar = ({
+  initSearchText = "",
+  eventHandlers: { OnSubmit },
+}: SearchBarProps) => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     setSearchText(initSearchText);
-  },
-  [initSearchText]);
+  }, [initSearchText]);
 
   return (
     <Style.SearchBarContainer>
@@ -23,8 +24,11 @@ const SearchBar = ({initSearchText = "", eventHandlers: {OnSubmit}}: SearchBarPr
         label="Search Giphs..."
         InputProps={{
           endAdornment: (
-            <InputAdornment position="start" >
-              <Button color="primary" sx={{ minWidth: "20px" }} onClick={() => OnSubmit(searchText)}>
+            <InputAdornment position="start">
+              <Button
+                color="primary"
+                sx={{ minWidth: "20px" }}
+                onClick={() => OnSubmit(searchText)}>
                 <SearchIcon />
               </Button>
             </InputAdornment>

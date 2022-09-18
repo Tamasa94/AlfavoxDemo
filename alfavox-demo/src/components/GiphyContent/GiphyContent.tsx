@@ -1,6 +1,4 @@
 import React from "react";
-import DataStorageService from "../../services/DataStorageService/DataStorageService";
-import ContentPagination from "../ContentPagination/ContentPagination";
 import GiphyCard from "../GiphyCard/GiphyCard";
 import GiphyContentProps from "./GiphyContentProps";
 import * as Styled from "./style";
