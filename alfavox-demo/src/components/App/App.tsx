@@ -1,11 +1,19 @@
 import React from 'react';
-import GiphyContainer from '../GiphyContainer/GiphyContainer';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import SearchPage from '../../Pages/SearchPage/SearchPage';
+import NotFoundPage from '../../Pages/NotFoundPage/NotFoundPage';
+import CardPage from '../../Pages/CardPage/CardPage';
 
 function App() {
 
-
   return (
-     <GiphyContainer />
+    <Router>
+      <Routes>
+        <Route path="/" element={<SearchPage />}/>
+        <Route path="giphy/:id" element={<CardPage />}  />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>     
   );
 }
 

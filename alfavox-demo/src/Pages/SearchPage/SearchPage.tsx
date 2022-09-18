@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import GiphyCard from "../../models/GiphyCard";
 import DataStorageService from "../../services/DataStorageService/DataStorageService";
 import giphySearchService from "../../services/GiphyService/GiphyService";
-import ContentPagination from "../ContentPagination/ContentPagination";
-import GiphyContent from "../GiphyContent/GiphyContent";
-import SearchBar from "../SearchBar/SearchBar";
-import ProgressWrapper from "../Utils/ProgressWrapper/ProgressWrapper";
-import GiphyContainerProps from "./GiphyContainerProps";
+import ContentPagination from "../../components/ContentPagination/ContentPagination";
+import GiphyContent from "../../components/GiphyContent/GiphyContent";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import ProgressWrapper from "../../components/Utils/ProgressWrapper/ProgressWrapper";
 import * as Styled from "./style";
 
-const GiphyContainer = ({}: GiphyContainerProps) => {
+const SearchPage = () => {
   const [giphs, setGiphs] = useState<GiphyCard[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -47,4 +46,4 @@ const GiphyContainer = ({}: GiphyContainerProps) => {
   );
 };
 
-export default GiphyContainer;
+export default SearchPage;

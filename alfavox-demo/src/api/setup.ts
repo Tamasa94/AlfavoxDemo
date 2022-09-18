@@ -1,8 +1,6 @@
 import axios from "axios";
 import config from "./../data/api-setup.json";
 
-console.log(config.url);
-
 const axiosInstance = axios.create({
   baseURL: config.url,
   headers: {
