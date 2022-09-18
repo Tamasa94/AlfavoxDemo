@@ -8,7 +8,7 @@ import {
 import React from "react";
 import GiphyCardProps from "./GiphyCardProps";
 
-const GiphyCard = ({ id, title, url }: GiphyCardProps) => {
+const GiphyCard = ({ title, url }: GiphyCardProps) => {
   return (
     <Card sx={{ maxWidth: 245, minWidth: 245 }}>
       <CardActionArea>

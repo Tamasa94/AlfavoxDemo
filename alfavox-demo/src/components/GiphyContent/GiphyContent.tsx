@@ -8,7 +8,6 @@ import * as Styled from "./style";
 const GiphyContent = ({ items, onChangePage }: GiphyContentProps) => {
   return (
     <Styled.ContentWrapper>
-      
       {items.map((giph) => (
         <GiphyCard
           id={giph.id}
