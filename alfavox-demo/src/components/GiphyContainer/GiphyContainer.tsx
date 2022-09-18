@@ -1,8 +1,9 @@
-import CircularProgress from "@mui/material/CircularProgress";
 import React, { useState } from "react";
 import GiphyCard from "../../models/GiphyCard";
 import giphySearchService from "../../services/GiphyService/GiphyService";
+import GiphyContent from "../GiphyContent/GiphyContent";
 import SearchBar from "../SearchBar/SearchBar";
+import ProgressWrapper from "../Utils/ProgressWrapper/ProgressWrapper";
 import GiphyContainerProps from "./GiphyContainerProps";
 import * as Styled from "./style";
 
@@ -24,7 +25,9 @@ const GiphyContainer = ({}: GiphyContainerProps) => {
   return (
     <Styled.AppContainer>
       <SearchBar eventHandlers={{ OnSubmit }} />
-      {loading ? <CircularProgress /> : <GiphyContainer></GiphyContainer>}
+      <ProgressWrapper loading={loading}>
+        <GiphyContent items={giphs} />
+      </ProgressWrapper>
     </Styled.AppContainer>
   );
 };
