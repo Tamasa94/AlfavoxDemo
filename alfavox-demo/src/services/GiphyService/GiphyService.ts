@@ -19,7 +19,7 @@ const toGiphyCardDTO = (cards: any[]): GiphyCard[] => {
     id: card.id,
     rating: card.rating,
     title: card.title,
-    url: card.url,
+    url: card.images.original.url,
   }));
 };
 
