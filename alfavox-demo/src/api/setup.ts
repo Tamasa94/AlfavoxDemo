@@ -11,7 +11,7 @@ const axiosInstance = axios.create({
   params: {
     api_key: config.key,
     lang: "en",
-    offset: 0,
+    limit: config.limit,
   },
 });
 
