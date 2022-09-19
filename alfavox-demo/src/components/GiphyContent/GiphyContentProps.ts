@@ -1,6 +1,6 @@
-import GiphyCard from "../../models/GiphyCard";
+import GiphyCardPreview from "../../models/GiphyCardPreview";
 
 export default interface GiphyContentProps {
-  items: GiphyCard[];
+  items: GiphyCardPreview[];
   onChangePage: (event: React.ChangeEvent<unknown>, page: number) => void;
 }

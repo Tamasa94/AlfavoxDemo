@@ -15,13 +15,13 @@ const SearchBar = ({
   }, [initSearchText]);
 
   return (
-    <Style.SearchBarContainer>
       <TextField
         onChange={(e) => {
           setSearchText(e.target.value);
         }}
         id="Giphy-TextField-SearchBox"
         label="Search Giphs..."
+        value={searchText}
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
@@ -36,7 +36,6 @@ const SearchBar = ({
         }}
         variant="outlined"
       />
-    </Style.SearchBarContainer>
   );
 };
 

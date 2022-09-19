@@ -8,8 +8,6 @@ const axiosInstance = axios.create({
   },
   params: {
     api_key: config.key,
-    lang: "en",
-    limit: config.limit,
   },
 });
 

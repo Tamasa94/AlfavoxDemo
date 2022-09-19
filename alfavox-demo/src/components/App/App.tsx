@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<SearchPage />}/>
-        <Route path="giphy/:id" element={<CardPage />}  />
+        <Route path="giphys/:id" element={<CardPage />}  />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>     

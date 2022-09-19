@@ -1,5 +1,5 @@
-import GiphyCard from "../../models/GiphyCard";
+import GiphyCardPreview from "../../models/GiphyCardPreview";
 
-type GiphyCardProps = GiphyCard;
+type GiphyCardProps = GiphyCardPreview;
 
 export default GiphyCardProps;

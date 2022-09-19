@@ -9,8 +9,6 @@ const GiphyContent = ({ items, onChangePage }: GiphyContentProps) => {
       {items.map((giph) => (
         <GiphyCard
           id={giph.id}
-          title={giph.title}
-          rating={giph.rating}
           url={giph.url}
         />
       ))}

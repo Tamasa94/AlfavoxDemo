@@ -1,5 +1,5 @@
 export default interface SearchBarProps {
-  initSearchText?: string;
+  initSearchText: string | null;
   eventHandlers: {
     OnSubmit: (searchText: string) => void;
   };

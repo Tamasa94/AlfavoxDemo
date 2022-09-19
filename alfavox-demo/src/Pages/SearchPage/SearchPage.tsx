@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import GiphyCard from "../../models/GiphyCard";
+import React, { useEffect, useState } from "react";
 import DataStorageService from "../../services/DataStorageService/DataStorageService";
 import giphySearchService from "../../services/GiphyService/GiphyService";
 import ContentPagination from "../../components/ContentPagination/ContentPagination";
@@ -7,15 +6,25 @@ import GiphyContent from "../../components/GiphyContent/GiphyContent";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import ProgressWrapper from "../../components/Utils/ProgressWrapper/ProgressWrapper";
 import * as Styled from "./style";
+import GiphyCardPreview from "../../models/GiphyCardPreview";
+import Navigation from "../../components/Utils/Navigation/Navigation";
 
 const SearchPage = () => {
-  const [giphs, setGiphs] = useState<GiphyCard[]>([]);
+  const [giphs, setGiphs] = useState<GiphyCardPreview[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const OnSubmit = async (searchText: string, offset? : number) => {
+  useEffect(() => {
+    const searchText = DataStorageService.getItem("search_text");
+
+    if (searchText) {
+      OnSubmit(searchText);
+    }
+  }, []);
+
+  const OnSubmit = async (searchText: string, offset?: number) => {
     try {
       setLoading(true);
-      const giphys = await giphySearchService.search(searchText,offset);
+      const giphys = await giphySearchService.search(searchText, offset);
       setGiphs(giphys);
     } catch (ex) {
       console.log("Giphy API Error");
@@ -25,20 +34,22 @@ const SearchPage = () => {
   };
 
   const onChangePage = (event: React.ChangeEvent<unknown>, page: number) => {
-    console.log(page);
     const searchText = DataStorageService.getItem("search_text") as string;
-    
+
     OnSubmit(searchText, page - 1);
   };
 
   const itemCount = Number(DataStorageService.getItem("item_count"));
 
-
-
   return (
     <Styled.AppContainer>
-      <SearchBar eventHandlers={{ OnSubmit }} />
-      {giphs?.length > 0 &&<ContentPagination onChangePage={onChangePage} itemCount={itemCount} /> }
+      <Navigation>
+        <SearchBar eventHandlers={{ OnSubmit }} initSearchText={DataStorageService.getItem("search_text")} />
+      </Navigation>
+
+      {giphs?.length > 0 && (
+        <ContentPagination onChangePage={onChangePage} itemCount={itemCount} />
+      )}
       <ProgressWrapper loading={loading}>
         <GiphyContent items={giphs} onChangePage={onChangePage} />
       </ProgressWrapper>
