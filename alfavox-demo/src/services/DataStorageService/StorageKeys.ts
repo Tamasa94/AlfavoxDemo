@@ -1,1 +1,1 @@
-export type StorageKeys = "item_count" | "search_text";
+export type StorageKeys = "item_count" | "search_text" | "offset";

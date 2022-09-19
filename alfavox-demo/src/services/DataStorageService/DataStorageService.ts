@@ -11,6 +11,7 @@ const DataStorageService: IDataStorageService = {
   initStorageItems: () => {
     DataStorageService.setItem("item_count", "0");
     DataStorageService.setItem("search_text", "");
+    DataStorageService.setItem("offset", "0");
   },
 };
 

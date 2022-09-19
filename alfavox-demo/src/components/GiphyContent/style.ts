@@ -7,5 +7,5 @@ export const ContentWrapper = styled.div`
   column-gap: 20px;
   justify-content: center;
   align-items: stretch;
-  margin: 40px 40px;
+  margin: 40px;
 `;

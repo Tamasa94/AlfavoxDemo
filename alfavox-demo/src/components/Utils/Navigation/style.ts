@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavigationWrapper = styled.div`
-  height: 10vh;
+  height: 90px;
   background: #ffffff;
   display: flex;
   column-gap: 10px;

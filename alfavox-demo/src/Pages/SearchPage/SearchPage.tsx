@@ -15,9 +15,9 @@ const SearchPage = () => {
 
   useEffect(() => {
     const searchText = DataStorageService.getItem("search_text");
-
+    const offset = Number(DataStorageService.getItem("offset"));
     if (searchText) {
-      OnSubmit(searchText);
+      OnSubmit(searchText,offset - 1);
     }
   }, []);
 
@@ -44,7 +44,10 @@ const SearchPage = () => {
   return (
     <Styled.AppContainer>
       <Navigation>
-        <SearchBar eventHandlers={{ OnSubmit }} initSearchText={DataStorageService.getItem("search_text")} />
+        <SearchBar
+          eventHandlers={{ OnSubmit }}
+          initSearchText={DataStorageService.getItem("search_text") as string}
+        />
       </Navigation>
 
       {giphs?.length > 0 && (
